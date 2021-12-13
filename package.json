@@ -4,7 +4,7 @@
   "description": "COM 427 Project",
   "main": "index.js",
   "scripts": {
-    "test": "node index",
+    "start": "node index",
     "devStart": "nodemon index",
     "compileSass": "sass ./public/sass/main.scss ./public/css/styles.css --watch",
     "build:js": "parcel build ./public/javascript/formProcessor.js --out-dir ./public/javascript  --out-file bundle.js"
