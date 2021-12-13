@@ -6,7 +6,6 @@ const adminValidation = require("./../models/validation/adminValidation");
 const Admin = require("./../models/admin");
 const Blog = require("../models/blog");
 const saccoModels = require("../models/sacco");
-const Auth = require("../2FA_auth/auth");
 const emailHandler = require("../middleware/emailHandler");
 
 const maxAge = 1 * 24 * 60 * 60;
@@ -123,16 +122,6 @@ exports.postAdminLoginCtrl = async (req, res, next) => {
       .status(400)
       .send("Wrong Username or Password! Please Try Again!");
   }
-  /*let token = jwt.sign({ _id: usr.id }, process.env.TOKEN_SECRET, {
-    expiresIn: 60 * 60 * 24,
-  });
-  //do two factor auth here
-
-  res
-    .status(200)
-    .header("token-auth", token)
-    .send({ auth: true, token: token });*/
-  //creating the token
   let verifiedAdmin = jwtToken(usr._id);
   //storing the token in a cookie
   res.cookie("jwtCookie", verifiedAdmin, {
