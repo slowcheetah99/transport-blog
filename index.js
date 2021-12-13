@@ -6,6 +6,7 @@ const methodOverride = require("method-override");
 const cookieParser = require("cookie-parser");
 const xss = require("xss-clean");
 const mongoSanitize = require("express-mongo-sanitize");
+const compression = require("compression");
 
 const app = express();
 
@@ -24,6 +25,8 @@ const transRouter = require("./routes/router");
 
 app.use("/admin", adminRouter);
 app.use("/routes", transRouter);
+
+app.use(compression());
 
 app.get("/", (req, res) => {
   res.status(302).redirect("/routes/");
