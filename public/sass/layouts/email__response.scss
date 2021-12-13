@@ -1,0 +1,8 @@
+.email__message{
+    display: grid;
+    place-items: center;
+
+    &--body{
+        margin-bottom: 2rem;
+    }
+}

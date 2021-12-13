@@ -1,0 +1,57 @@
+*::before, 
+*::after, 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-family;
+}
+
+html{
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    font-size: $font-size;
+
+    
+    @include respond(phone){//max-width <=1200
+        font-size: 30% !important; //1rem = 12px
+    }
+
+    @include respond(tab-port){//max-width <=1200
+        font-size: 50% !important; //1rem = 12px
+    }
+
+    @include respond(tab-land){// max-width <=900
+        font-size:  56.25% !important; //1rem = 8px
+    };
+}
+
+
+body{ 
+    width: 100%;
+    height: auto;
+    background-color: rgb(243, 237, 237);
+    padding: 3rem;
+    line-height: 2.5rem;
+    letter-spacing: .2rem;
+    font-family: $font-family;
+    
+
+    @include respond(tab-land){
+        padding: 1.5rem;
+    }
+
+    @include respond(tab-port){//max-width <=1200
+        padding: 0;
+        margin: 0;
+
+    }
+
+}
+ section/*:not(:first-child)*/{
+     margin-bottom: $gutter-vertical;
+ }
+
+ .body-contact{
+    overflow-x: hidden;
+ }

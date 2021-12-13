@@ -1,0 +1,66 @@
+.form{
+    padding: 5rem 0;
+    background-color: white;
+    display: none;
+    transition: all .4s ease-in-out;
+
+    &__register{
+        display: flex;
+        flex-direction: column;
+        background-image: linear-gradient(to right, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+        padding: 10rem 10rem;
+        width: 50%;
+        border-radius: 2%;
+        transition: all .4s ease;
+
+        &:hover{
+            transform: scale(1.02) translateY(-.5rem);
+            box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.3); 
+        }
+    }
+
+    &-control{
+        padding: 1rem;
+        outline: none;
+        border: none;
+        border-radius: 2%;
+        box-shadow: inset;
+        transition: all .4s ease-in-out;
+
+        &:valid{
+            border-bottom:3px solid rgb(10, 231, 10);
+        }
+
+        &:invalid{
+            border-bottom:3px solid orange;
+            outline: none;
+        }
+
+        &__label{
+            font-size: 1.35rem;
+        }
+    }
+}
+.submit-btn{
+    display: inline;
+    margin-top: 2rem;
+    padding: .5rem 2.5rem;
+    font-size: 1.3rem;
+    color: black;
+    background-color: white;
+    border: none;
+    outline: none;
+    border-radius: .7rem;
+    transition: all .4s ease-in-out;
+
+    &:hover{
+        background-color: lighten(white, 5);
+        transform: translateY(-.5rem);
+        box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.35);
+    }
+}
+
+#members, #new-members{
+    display: flex;
+    flex-direction: column;
+}

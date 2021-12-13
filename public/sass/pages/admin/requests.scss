@@ -1,0 +1,102 @@
+.admin__ribbon--info{
+    @include center-align;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a{
+        color: hsl(240, 73%, 65%);
+        position: relative;
+        text-decoration: none;
+        font-size: 1.2rem;
+        padding: .2rem 2rem;
+        background-color: white;
+        margin-top: 1.5rem;
+        transition: all .4s ease;
+
+
+        &::after{
+            position: absolute;
+            top: -200%;
+            right: 30%;
+            content: 'GO TO HOMEPAGE WHEN DONE!';
+            background-color: white;
+            color:hsl(240, 73%, 65%);
+            padding-top: 1rem;
+            padding-bottom: 2rem;
+            width: 30rem;
+            text-align: center;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 61% 75%, 0% 75%);
+            transform: scale(0);
+            transition: all .4s ease;
+        }
+
+        &:hover{
+            background-color:hsl(240, 73%, 65%);
+            color: white;
+
+            &::after{
+                transform: scale(1);
+            }
+        }
+    }
+}
+.sacco{
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.saccoElement{
+    background-color: white;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    width: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    transition: all .4s ease;
+
+    p{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    &:hover{
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
+        transform: translateY(-.5rem);
+    }
+
+    .admin__report{
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+        padding: .5rem 3.5rem;
+        border-radius: 2rem;
+        margin-bottom: 3rem;
+        transition: all .4s ease;
+
+        &:link{
+            background-color: hsl(240, 73%, 65%);
+        }
+
+        &:visited{
+            background-color: hsl(240, 44%, 42%);
+        }
+
+        &:hover{
+            background-color: hsl(240, 73%, 65%);
+            transform: scaleX( 1.05);
+        }
+
+        &:active{
+            background-color: hsl(240, 77%, 57%);
+        }
+    }
+}

@@ -1,0 +1,129 @@
+.contact__info-svgs{
+    padding: 25rem 0;
+    position: relative;
+
+    &--1{
+        position: absolute;
+        top: 15%;
+        left: 5%;
+        display: flex;
+        align-items: center;
+
+        @include respond(tab-port){
+            left: 27.5%;
+        }
+
+    }
+
+    
+    &--2{
+        position: absolute;
+        top: 45%;
+        left: 5%;
+        display: flex;
+        align-items: center;
+
+        @include respond(tab-port){
+            left: 27.5%;
+        }
+    }
+
+    
+    &--3{
+        position: absolute;
+        top: 75%;
+        left: 5%;
+        display: flex;
+        align-items: center;
+
+        @include respond(tab-port){
+            left: 27.5%;
+        }
+
+    }
+
+
+    &--content{
+        display: inline;
+        font-size: 1.7rem;
+        font-weight: 700;
+    }
+
+    .svg__responsive{
+        display: inline-block;
+        width: 8rem;
+        height: 8rem;
+        margin-right: 19rem;
+    }
+
+
+}
+
+.contact__info-form{
+    padding: 25rem 0;
+    position: relative;
+    background: linear-gradient(135deg, hsl(240, 73%, 65%), white) !important;
+}
+
+.contact__form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &--group{
+        margin-bottom: 3rem;
+        padding: 0 3rem 0 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+
+    &--input{
+        padding: 1rem;
+        outline: none;
+        border: none;
+        border-radius: 2%;
+        transition: all .4s ease-in-out;
+
+        &:valid{
+            border-bottom:3px solid rgb(10, 231, 10);
+        }
+
+        &:invalid{
+            border-bottom:3px solid orange;
+            outline: none;
+        }
+    }
+
+    &--label{
+        font-size: 1.35rem;
+    }
+
+    &--textarea{
+        padding: 1rem;
+        outline: none;
+        border: none;
+        border-radius: 2%;
+        &::-moz-placeholder{
+            text-align: center;
+            transform: translateY(50%);
+        }
+
+        &:empty{
+            border-bottom:3px solid orange;
+        }
+    }
+    &--textarea::-webkit-input-placeholder{
+        color: red;
+    }
+}
+
+
+.fas{
+    font-size: 5rem;
+    color: hsl(240, 73%, 65%);
+    margin-right: 3rem;
+}
+

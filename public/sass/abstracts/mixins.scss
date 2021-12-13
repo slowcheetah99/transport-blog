@@ -1,0 +1,41 @@
+@mixin grid {
+    background-color: #FFF;
+    height: 5vh;
+}
+
+@mixin card-align{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin: 0 2rem 2rem 2rem;
+    margin-bottom: 2rem;
+}
+
+@mixin sponsors-align{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@mixin center-align{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin respond($breakpoint){
+
+    @if($breakpoint == phone){
+        @media(max-width: 37.5em) { @content }
+    };
+
+    @if($breakpoint== tab-port){
+        @media(max-width: 56.25em) { @content }
+    };
+
+    @if($breakpoint== tab-land){
+        @media(max-width: 75em) { @content }
+    };
+}

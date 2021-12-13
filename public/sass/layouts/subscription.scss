@@ -1,0 +1,34 @@
+.subscription{
+    padding: 15rem 0;
+    position: relative;
+
+    p{
+        position: absolute;
+        right: 6.5%;
+        font-size: 1.85rem;
+        color: hsl(240, 73%, 65%);
+
+        @include respond(tab-land){
+            top: 2.5%;
+            right: 50%;
+            transform: translateX(50%);
+        }
+    }
+
+    &__form{
+        position: absolute;
+        padding: 4rem 4rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -45%);
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(to right, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+        width: 40rem;
+    }
+}
+
+.email__sub{
+    margin-bottom: 2rem;
+}
+

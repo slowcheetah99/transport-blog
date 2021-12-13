@@ -1,0 +1,55 @@
+.btn-link{
+    padding: 1rem 1.5rem;
+    background-image: linear-gradient(to right,  hsl(240, 73%, 65%), hsl(273, 75%, 66%));
+    border-radius: 7%;
+    text-decoration: none;
+    color: rgba(255, 255, 255);
+    transition: all .4s ease-in-out; 
+    text-decoration: none;
+    display: inline;
+
+    &:hover{
+        background-image: linear-gradient(to right,  hsl(240, 73%, 65%), hsl(273, 75%, 66%));
+        color: rgba(255, 255, 255);
+        transform: scale(1.01) translateY(-5rem);
+    }
+}
+
+.logout-btn{
+    padding: 1rem 2.5rem;
+    background-color: darken(rgba(255, 255, 255), 2);
+    text-decoration: none;
+    border-radius: 100px;
+    color: hsl(240, 73%, 65%);
+    transition: all .4s ease-in-out;
+    font-weight: 300;
+    font-size: 1.3rem;
+
+    @include respond(phone){
+        font-size: 1.1rem;
+    }
+
+    &:hover{
+        transform: scale(1.01) translateY(-.5rem);
+        box-shadow: 4px 4px 7px rgba(0,0,0,.3);
+    }
+}
+
+.sub__btn{
+    margin: 1rem auto;
+    color: black;
+    width: 50%;
+    background-color:white;
+    padding: .5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 2%;
+    transition: all .4s ease-in-out;
+
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(68, 66, 66);
+        color: white;
+        transform: scale(1.05);
+    }
+}

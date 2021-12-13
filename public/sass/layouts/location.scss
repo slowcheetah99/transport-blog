@@ -1,0 +1,70 @@
+.location__cards{
+    width: 100%;
+    height: 85vh;
+    background-image: linear-gradient(to right, hsl(273, 75%, 66%) 0%, hsl(240, 73%, 65%) 50%, transparent 100%), url('./images/nairobi-county.jpeg');;
+    display: flex;
+    align-items: center;
+    transition: all .4s ease;
+
+    &:hover{
+        background-image: linear-gradient(to right, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+        background-size: cover;
+        background-position: center;
+    }
+
+    &-element{
+        padding: 10rem 0;
+        transition: all 0.4s ease-in-out;
+        position: relative;
+        background-image: linear-gradient(120deg,#201c1c 0%, transparent 100%), url('/images/nairobi-county.jpeg');
+        background-size: cover;
+        background-position: center;
+        
+        @include respond(tab-port){
+            margin-bottom: 2rem;
+        }
+        &--content{
+            position: absolute;
+            top: 25%;
+            left: 20%;
+            line-height: 3.5rem;
+            font-weight: 300;
+            font-size: 1.5rem;
+            transition: all .4s ease-in-out;
+            color: white;
+
+            @include respond(tab-port){
+                left: 32.5%;
+            }
+
+            &:hover{
+                transform: scale(1.05);
+                line-height: 3.7rem;
+            }
+        }
+
+
+        &:hover{
+            box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.35);
+            transform: translateY(-2rem) scale(1.05);
+            border-radius: 16px;
+        }
+    }
+}
+
+.location__map{
+    height: 85vh;
+    width: 100%;
+
+    &-element{
+        padding: 26rem 0;
+        background-image: url('/images/map-719969_1920.jpg');
+        background-size: cover;
+        background-position: center;
+        transition: all 0.4s ease-in-out;
+
+        &:hover{
+            transform: scale(1.01);
+        }
+    }
+}

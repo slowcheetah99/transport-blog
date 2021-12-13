@@ -1,0 +1,64 @@
+<%- include('../partials/admin__head') %>
+<body class="animate__animated animate__slideInLeft">
+<div class="admin__header">
+    <div class="admin__ribbon">
+        <p><a href="#admin-edit__form">Edit Your Profile Here</a></p>
+    </div>
+    <div>
+
+        <div class="header__logo">
+            <!--make it a link once I've gotten the logo-->
+            <a class="logout-btn admin__logout" href="/admin/logout">Logout</a>
+            </div>
+            <% adminDetails.forEach(admin=>{ %>
+            <div class="nav__placement">
+                <div class="nav__cards">
+                    <a href="/admin/home" class="nav__cards--links">
+                        <i class="fas fa-tachometer-alt svgs"></i>
+                       <h3 class="svgs__description">DASHBOARD</h3>
+                       <p>See Admin Information</p>
+                    </a>
+                </div>
+                <div class="nav__cards">
+                    <a href="/admin/home/requests" class="nav__cards--links">
+                        <i class="fas fa-envelope svgs"></i>
+                        <h3 class="svgs__description">REQUESTS</h3>
+                        <p>Pending Messages</p>
+                    </a>
+                </div>
+            </div>
+            <% }) %>
+    <%adminDetails.forEach((user)=>{%>
+    <h2 class="admin__text"><a href="/admin/profile">Welcome, <%=user.email%></a></h2>
+    <% }) %>
+
+    </div>
+    <h1 class="admin__title">CBD TRANSPORT</h1>
+</div>
+
+        <div class="admin__form">
+            <% adminDetails.forEach(admin=>{ %>
+            <form class="admin__form--register" method="POST" action="/admin/home/<%=admin._id%>?_method=PUT" id="admin-edit__form"> 
+                <div class="formError"></div>
+                <h2 class="u-center">EDIT DETAILS</h2>
+                <label type="label" for="admin-username" class="form__label">USERNAME:</label>
+                <input type="text" id="admin-username" name="username" required=true
+                class="form-control" value="<%=admin.username%>"/>
+    
+                <label type="label" for="admin-password" class="form__label">PASSWORD:</label>
+                <input type="password"id="admin-password" name="password" required=true class="form-control" autocomplete="off"/>
+    
+                <div class="submit__btn">
+                    <button type="submit" class="submit__btn-button">SUBMIT</button>
+                    <a class="cancel__btn" href="javascript:history.back()">CANCEL</a>
+                </div>
+            </form>
+            <% }) %>
+        </div>
+    <div>
+        
+    </div>
+</div>
+</div>
+<%- include('../partials/footer') %>
+</body>

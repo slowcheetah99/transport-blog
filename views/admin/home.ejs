@@ -1,0 +1,87 @@
+<%- include('../partials/admin__head') %>
+<body class="animate__animated animate__slideInLeft">
+<div class="admin__header">
+    <div class="admin__ribbon">
+        <p><a href="#nav__links">Control All Your From Work Here</a></p>
+    </div>
+    <div>
+
+        <div class="header__logo">
+            <!--make it a link once I've gotten the logo-->
+            <a class="logout-btn admin__logout" href="/admin/logout">Logout</a>
+            </div>
+            <% adminUser.forEach(admin=>{ %>
+            <div class="nav__placement">
+                <div class="nav__cards" id="nav__links">
+                    <a href="/admin/home/<%=admin._id%>" class="nav__cards--links grid place-items-center">
+                        <span class="iconify text-indigo-500 h-32 w-32" data-icon="gg:profile"></span>
+                        <h3 class="svgs__description font-bold">PROFILE</h3>
+                        <p>Edit Your Profile</p>
+                    </a>
+                </div>
+                <div class="nav__cards">
+                    <a href="/admin/home/requests" class="nav__cards--links grid place-items-center">
+                        <span class="iconify text-indigo-500 h-32 w-32" data-icon="bi:envelope-plus-fill"></span>
+                        <h3 class="svgs__description font-bold">REQUESTS</h3>
+                        <p>Pending Messages</p>
+                    </a>
+                </div>
+            </div>
+            <% }) %>
+    <%adminUser.forEach((user)=>{%>
+    <h2 class="admin__text text-xl"><a href="/admin/profile">Welcome, <%=user.email%></a></h2>
+    <% }) %>
+
+    </div>
+    <h1 class="admin__title">CBD TRANSPORT</h1>
+</div>
+
+<canvas id="adminChart">
+
+</canvas>
+<%- include('../partials/footer') %>
+<script>
+
+//our two graphs will be for SACCOs with relation to the routes registered and alo the SACCOs with relation to the blogs posted
+
+    const labels=<%- JSON.stringify(labels) %>;
+    const datasetValues=<%- JSON.stringify(datasetValues) %>;
+    console.log(datasetValues);
+    const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Sacco Blog Posting Frequency ',
+                barPercentage: 1,
+                maxBarThickness: 8,
+                minBarLength: 2,
+                backgroundColor: [
+                                'hsl(240, 73%, 65%)',
+                                'rgb(255, 99, 132)',
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 205, 86)',
+                                'hsl(273, 75%, 66%)'
+                                ],
+                borderColor: 'rgb(255, 99, 132)',
+                hoverOffset: 4,
+                data: datasetValues,
+            }]
+        };
+    const config={
+        type:'bar',
+        data,
+        options:{
+            scales: {
+            y: {
+                beginAtZero: true,
+                 },
+            x: {barPercentage: 1}
+            },
+            indexAxis: 'y'
+        }
+    };
+
+    const adminChart= new Chart(
+        document.getElementById('adminChart'),config);
+</script>
+</body>
+</html>

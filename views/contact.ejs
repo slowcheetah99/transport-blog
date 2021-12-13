@@ -1,0 +1,87 @@
+<%- include('./partials/head') %>
+<body class="body-contact">
+
+    <section class="header">
+        <div class="row">
+            <div class="col-1-of-1 header__hero">
+                <div class="header__logo">
+                <!--make it a link once I've gotten the logo-->
+                </div>
+                <div class="header__text">
+                    <h1 class="heading-1">CDB TRANSPORT</h1>
+                    <p class="header__text-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo sunt, porro voluptatem excepturi eaque voluptate animi distinctio nisi maiores ab quos in saepe eveniet vitae ducimus minima reiciendis, minus dolore eius architecto illo sit. Quibusdam, optio. Quae tenetur perspiciatis fugit iste exercitationem cum ipsum, commodi saepe, voluptate, quas magni facere.</p>
+                </div> 
+                <!--<div class="header__image">
+
+                </div>-->
+                <div class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-list-item"><a class="header__nav-list-link" href="/routes/">HOME</a></li>
+                        <li class="header__nav-list-item"><a class="header__nav-list-link" href="/routes/about">ABOUT</a></li>
+                        <li class="header__nav-list-item"><a class="header__nav-list-link" href="/routes/contact">CONTACT</a></li>
+                    </ul>
+                </div>
+                <div class="header__hero-img">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="contact__info">
+        <div class="row">
+            <div class="col-1-of-3 contact__info-svgs">
+                    <div class="contact__info-svgs--1">
+                        <div class="contact__info-svgs--images">
+                            <i class="fas fa-at"></i>
+                        </div> 
+                        <div class="contact__info-svgs--content">
+                            <p>cbdTrans@trans.com</p>
+                        </div> 
+                    </div> 
+                <div class="contact__info-svgs--2">
+                    <div class="contact__info-svgs--images">
+                        <i class="fas fa-phone-square"></i>
+                    </div> 
+                    <div class="contact__info-svgs--content">
+                        <p>0707881176</p>
+                    </div>  
+                </div>  
+                <div class="contact__info-svgs--3">
+                    <div class="contact__info-svgs--images">
+                        <i class="fas fa-compass"></i>
+                    </div> 
+                    <div class="contact__info-svgs--content">
+                        <p>Address near Building</p>
+                        <p>Nairobi, Kenya 02022</p>
+                        <p>www.cbdtrans.co.ke</p>
+                    </div>  
+                </div>         
+            </div>
+
+            <div class="col-2-of-3 contact__info-form">
+                <form class="contact__form" method="POST" action="/routes/contact" id="contact__form--id">
+                    <div class="contact__form--group">
+                        <label class="contact__form--label">Full Name:</label>
+                        <input type="text" class="contact__form--input" name="full-name" placeholder="Full Name" required/>
+                    </div>
+
+                    <div class="contact__form--group">
+                        <label class="contact__form--label">Email:</label>
+                        <input type="email" class="contact__form--input" name="contact-email" placeholder="Email Address" required />
+                    </div>
+
+                    <div class="contact__form--group">
+                        <label class="contact__form--label">Message:</label>
+                        <textarea rows="10" cols="50" class="contact__form--textarea" name="contact-message" placeholder="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="contact__button">Send &rarr; </button>
+                </form>
+
+            </div>
+    </section>
+    <%- include('./partials/footer') %>
+
+    </body>
+    </html>

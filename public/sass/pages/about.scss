@@ -1,0 +1,97 @@
+.motto__text{
+    padding: 25rem 0;
+    position: relative;
+
+    &-content{
+        position: absolute;
+        top: 27.5%;
+        left: 5%;
+
+        &--heading{
+            font-size: 15rem;
+            margin-bottom: 7.5rem;
+            color: hsl(240, 73%, 65%);
+            font-weight: 700;
+            transition: all 0.4s ease-in-out;
+
+            @include respond(phone){
+                font-size: 10rem;
+                margin-bottom: 4rem;
+            }
+
+            .you{
+                color:hsl(273, 75%, 66%);
+            }
+
+            .quote1{
+                color: lighten(hsl(273, 75%, 66%), 5%);
+            }
+
+            .quote2{
+                color: darken(hsl(273, 75%, 66%), 20%);
+            }
+
+            &:hover{
+                transform: translateX(-1rem);
+            }
+        }
+
+        &--paragraph{
+            font-size: 1.5rem;
+            text-align: center;
+            width: 92.5%;
+        }
+    }
+}
+
+.motto__images{
+   padding: 25rem 0;
+   position: relative;
+   overflow: hidden;
+
+   @include respond(tab-port){
+       width: 100% !important;
+   }
+
+   &-content{
+       position: absolute;
+       top: 5%;
+       left: 10%;
+
+       @include respond(tab-port){
+           left: 25%;
+       }
+   }
+
+    &--1{
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         margin-top: 5rem;
+         
+         &-image{
+            height: 8rem;
+            width: 8rem;
+            border-radius: 50%;
+            background-color: hsl(240, 73%, 65%);
+            transition: all 0.4s ease-in-out;
+
+            &:hover{
+                border-radius: 16px;
+            }
+         }
+
+         &-description{
+
+
+            .official{
+                font-size: 1.8rem;
+
+                &__title{
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}
+

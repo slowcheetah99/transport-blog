@@ -1,0 +1,113 @@
+.testimonials__elements{
+    padding: 10rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    transition: all .4s ease-in-out;
+
+    &--3{
+        &:hover{
+            border-radius: 1rem;
+            transform: translateY(-.5rem);
+            background-color: rgb(241, 238, 238);
+            outline: 2px solid hsl(273, 75%, 66%);
+        }
+    }
+
+    &--image{
+        border-radius: 50%;
+        position: absolute;
+        transition: all .4s ease-in-out;
+
+        &--1{
+            top: 12.5%;
+            left: 3.5%;
+            width: 30vh;
+            height: 30vh;
+            background: url('/images/testimonials/pexels-andre-furtado-1263986.jpg');
+            background-size: cover;
+            background-position: center;
+
+            @include respond(tab-port){
+                width: 25vh;
+                height: 25vh;
+            }
+        }
+        &--2{
+            top: 20%;
+            left: 3.5%;
+            width: 25vh;
+            height: 25vh;
+            background: url('/images/testimonials/pexels-ashutosh-sonwani-3562117.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        &--3{
+            top: 20%;
+            left: 3.5%;
+            width: 25vh;
+            height: 25vh;
+            background: url('/images/testimonials/pexels-joão-jesus-3576955.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        &:hover{
+            background-position: left;
+        }
+    }
+    &--content{
+        position: absolute;
+        top: 22.5%;
+        left: 25%;
+        padding-right: 2rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+
+        &--1{
+            @include respond(tab-port){
+                font-size: 1.25rem;
+                padding-left: 4rem;
+                top: 5%;
+            }
+        }
+
+        &--2{
+            left: 35%;
+            text-align: left;
+        }
+    
+        &-author{
+            font-style: italic;
+            float: right;
+            padding-right: 4rem;
+            padding-top: 1.5rem;
+            font-size: 1.25rem;
+            color: rgb(68, 66, 66);
+
+            @include respond(phone){
+                padding-top: 0;
+            }
+        }
+    }
+}
+
+
+
+.testimonials__elements--content-only{
+    position: absolute;
+    top: 20%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: left;
+    transition: all .4s ease-in-out;
+}
+
+.testimonials__caption{
+    font-size: 5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3.5rem;
+}

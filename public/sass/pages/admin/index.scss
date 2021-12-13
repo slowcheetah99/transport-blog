@@ -1,0 +1,51 @@
+.admin__form{
+    display: grid;
+    place-items: center;
+
+    &--register{
+        margin: 3rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 35%;
+        justify-content: center;
+        padding: 5rem 5rem;
+        background-color: hsl(240, 73%, 65%);
+        // background: linear-gradient(135deg,hsl(240, 73%, 65%),hsl(273, 75%, 66%), transparent);
+
+        .form-control{
+            width: 100%;
+        }
+    }
+}
+
+.form__label:not(:first-child){
+    margin-top: 2rem;
+}
+
+.submit__btn{
+    margin-top: 1.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-button{
+        padding: 1.25rem 4.5rem;
+        background-color: hsl(273, 75%, 66%);
+        border: none;
+        outline: none;
+        border-radius: 2rem;
+        font-size: 1.2rem;
+        color: black;
+        transition: all .4s ease-in-out; 
+
+
+        &:hover{
+            transform: translateY(-.5rem) scale(1.05);
+            color: white;
+            cursor: pointer;
+        }
+
+    }
+}

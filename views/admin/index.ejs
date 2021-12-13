@@ -1,0 +1,57 @@
+<%- include('../partials/admin__head') %>
+<body>
+    <section class="header">
+        <div class="row">
+            <div class="col-1-of-1 header__hero">
+                <div class="header__logo">
+                <!--make it a link once I've gotten the logo-->
+                </div>
+                <div class="header__text">
+                    <h1 class="heading-1">CDB TRANSPORT</h1>
+                </div>
+                <div class="header__svg">
+                   
+                </div>
+                <div class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-list-item"><a class="header__nav-list-link" href="/routes">HOME</a></li>
+                        <li class="header__nav-list-item"><a class="header__nav-list-link" href="/routes/about">ABOUT</a></li>
+                        <li class="header__nav-list-item"><a class="header__nav-list-link" href="/routes/contact">CONTACT</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <div class="admin__form">
+        <form class="admin__form--register" method="POST" action="/admin/register" id="admin__register">
+            
+            <div class="formError"></div>
+                
+            <div class="form-group w-full bg-white border-2 border-gray-200 h-4 m-auto flex items-center justify-between py-10 px-4 rounded-lg">
+                <small class="text-xl font-bold">Error Message</small>
+                <span class="iconify icon-success" data-width="24" data-height="24" data-icon="si-glyph:checked"></span>
+                <span class="iconify icon-error" data-width="24" data-height="24" data-icon="carbon:warning-filled"></span>
+            </div>
+            
+            <label type="label" for="admin-email" class="form__label">EMAIL:</label>
+            <input type="email" id="admin-email" name="email" required=true class="form-control" />
+
+            <label type="label" for="admin-username" class="form__label">USERNAME:</label>
+            <input type="text" id="admin-username" name="username" required=true
+            class="form-control" />
+
+            <label type="label" for="admin-password" class="form__label">PASSWORD:</label>
+            <input type="password"id="admin-password" name="password" required=true class="form-control" autocomplete="off" />
+
+            <label type="label" for="admin-phone" class="form__label">PHONE NUMBER:</label>
+            <input type="tel" id="admin-phone" name="phoneNumber" required=true class="form-control" />
+
+            <div class="submit__btn">
+                <button type="submit" class="submit__btn-button">SUBMIT</button>
+            </div>
+        </form>
+    </div>
+<%- include('../partials/footer') %>
+</body>
+</html>

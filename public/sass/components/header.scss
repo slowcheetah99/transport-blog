@@ -1,0 +1,285 @@
+.header__hero{
+    position: relative;
+    width: 100%;
+    padding: 27.5rem 0;
+    background-image: linear-gradient(to right, hsl(273, 68%, 65%), hsl(240, 73%, 65%));
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
+    z-index: 5;
+
+    .header__logo{
+        position: absolute;
+        top: 4%;
+        left: 8%;
+        width: 15rem;
+        height: 15rem;
+        transition: all .4s ease-in-out;
+
+        &--image{
+           width: 10rem;
+           height: 10rem;
+           object-fit: contain;
+        }
+
+        @include respond(phone){
+            left: 2%;
+            width: 7rem;
+            height: 7rem;
+        }
+
+        &:hover{
+            transform: scale(1.2) translateY(-.5rem);             
+        }
+    }
+    .heading-1{
+        font-size: 4.5rem;
+        margin-left: 2.7rem;
+        margin-bottom: 3rem;
+        letter-spacing: 1.5rem;
+        color:rgb(243, 237, 237);
+        transition: all 0.4s ease-in-out;
+
+        @include respond(tab-port){
+            margin: 0;
+            font-size: 3rem;
+            margin-top: 4rem;
+        }
+
+        &:hover{
+           color: lighten(rgb(243, 237, 237),30%);
+           letter-spacing: 1.7rem;
+        }
+    }
+
+    &-title{
+        position: absolute;
+        bottom: 20%;
+        left: 22.5%;
+        font-size: 2.5rem;
+
+        @include respond(phone){
+            display: none;
+        }
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -120%;
+            width: 118%;
+            height: 2px;
+            background-color: rgb(34, 28, 28);
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 103%;
+            width: 135%;
+            height: 2px;
+            background-color: rgb(34, 28, 28);
+        }
+    }
+
+    .header__text{
+        position: absolute;
+        top: 35%;
+        left: 5%;
+
+        &-content{
+            width: 95%;
+            line-height: 3rem;
+            transition: all 0.4s ease-in-out;
+
+            @include respond(tab-port){
+                font-size: 2rem;
+            }
+
+            @include respond(phone){
+                display: none;
+            }
+
+            &:hover{
+                line-height: 3.5rem;
+            }
+        }
+
+    }
+
+    .header__button{
+        padding: 1rem 3rem;
+        background-color: rgb(243, 237, 237);
+        border-radius: 16px;
+        margin-top: 3rem;
+        outline: none;
+        border: none;
+        font-size: 1.2rem;
+        transition: all 0.4s ease-in-out;
+        text-decoration: none;
+        
+        @include respond(tab-port){
+            font-size: 1rem;
+        }
+
+        &:not(:last-child){
+            margin-right: 2rem;
+            
+        }
+        &:hover{
+            background-color: lighten(rgb(243, 237, 237), 10);
+            cursor: pointer;
+            transform: translateY(-.5rem)
+        }
+
+    }
+
+    &-advertisers{
+        position: absolute;
+        bottom: 10%;
+        width: 50%;
+        height: 5rem;
+        margin-left: 5rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        @include respond(phone){
+            display: none;
+        }
+
+        &-item{
+            border-radius: 50%;
+            height: 5rem;
+            width: 5rem;
+            background-color: rgb(243, 237, 237);
+            transform: scale(1) translateY(0);
+            transition: all .4s ease-in-out; 
+
+
+            &:hover{
+                transform: scale(1.2) translateY(-.5rem);             
+            }
+            
+        }
+    }
+
+    .header__nav-list{
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        width: 30vw;
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 1.5rem;
+        font-weight: 700;
+
+        @include respond(tab-port){
+            right: 10%;
+            width: 65vw;
+        }
+
+        &-item{
+            list-style: none;
+            transition: all 0.4s ease-in-out;
+            backface-visibility: hidden;
+
+            &:hover{
+                transform: scale(1.1) translateY(-.2rem);
+                color: rgba(243, 237, 237, .2);
+            }
+
+
+        }
+
+        &-link{
+            text-decoration: none;
+
+            &:link{
+                color: rgb(243, 237, 237);
+            }
+
+            &:visited{
+                color: rgba(243, 237, 237, .5);
+            }
+
+            &:active{
+                color: rgb(34, 32, 32);
+            }
+        }
+    }
+}
+
+.header__image{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 75%;
+    background-image: url('./images/Matatu.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 150;
+
+    &::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30rem;
+        height: 30rem;
+        background-color: hsl(240, 73%, 65%);
+        border-radius: 50%;
+        z-index: -9;
+    }
+}
+
+.header__svg{
+    position: absolute;
+    top: 0;
+    left: 55%;
+    width: 40vw;
+    height: 70vh;
+    background-image: url('/images/svg/6287-removebg.png');
+    background-size: cover;
+
+    @include respond(tab-port){
+        display: none;
+    }
+
+    &::before, &::after{
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    &::before{
+        bottom: -5%;
+        left: -5%;
+        width: 20rem;
+        height: 20rem;
+        background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+        opacity: .15;
+        z-index: -2;
+    }
+
+    &::after{
+        top: 10%;
+        left: 20%;
+        width: 40rem;
+        height: 40rem;
+        background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+        opacity: .25;
+        z-index: -1;
+    }
+}
+
+.error__svg{
+    background-image: url('/images/svg/3747371-removebg-preview.png')!important; 
+}
+
+.header__cta{
+    @include respond(phone){
+        margin-top: 1.5em;
+    }
+}

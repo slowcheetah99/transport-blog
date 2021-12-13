@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>CBD TRANSPORT | WELCOME</title>
+</head>
+<body>
+    <section class="header" id="header__top">
+        <div class="row">
+            <div class="col-1-of-1 header__hero" style="background-image:linear-gradient(to left bottom, hsl(273, 75%, 66%), hsla(240, 73%, 65%,.7)),url('/uploads/<%=userSpecific.imageUpload%>'); background-size: cover; z-index: 900; background-position: center;">
+                <div class="header__logo">
+                </div>
+
+                <div class="header__nav-list d-flex">
+                    <span class="welcome__text">Welcome, <%=userSpecific.name%></span>
+                    <a class="logout-btn" id="logout-btn-edit" href="/routes/logout">Logout</a>
+                </div>
+                <div class="header__hero-img">
+
+                    <div class="top__blog">
+                        <div class="top__blog--ribbon">LATEST POST</div>
+                        <div class="top__blog--content">
+                            <div class="top__blog--content-image" style="background-image:url('/uploads/<%=userSpecific.imageUpload%>'); background-size: cover; z-index: 900; background-position: center;"></div>
+                            <div class="top__blog--content-body">
+                                <%saccoBlogs.forEach((blog, index)=>{ %>
+                                    <% if(index === 0){%>
+                                        <h3><!--title of latest blog goes here--><%=blog.title%></h3>
+                                            <p><!--description of the blog goes here-->
+                                                <%=blog.description%>
+                                            </p>
+                                            <h4><%=blog.createdAt.toLocaleDateString()%></h4>
+
+                                            <div class="btn__blog-edit">
+                                                <a class="btn__blog" href="/routes/<%=userSpecific._id%>/blog/edit/<%=blog._id%>"id="<%=blog._id%>">Edit</a>
+                                                <form method="POST" action="/routes/<%=userSpecific._id%>/blog/delete/<%=blog._id%>?_method=DELETE" class="delete-btn">
+                                                    <button class="logout-btn logout-btn-delete" type="submit">Delete</button>
+                                                </form>
+                                            </div>
+                                    <% }%>
+                                    <%})%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="other__blogs">
+        <h2 class="u-center u-title">Other Blogs</h2>
+        <div class="other__blogs-content">
+            <%saccoBlogs.forEach((blog, index)=>{ %>
+                <% if(index !== 0){%>
+        <article class="other__blogs-article">
+            <div class="article-img" style="background-image:url('/uploads/<%=userSpecific.imageUpload%>'); background-size: cover; z-index: 900; background-position: center;"></div>
+            <div class="article-description">
+                <h3 class="u-center"><%=blog.title%></h3>
+                <p class="blog__text">
+                    <%=blog.description%>
+                    <h3 class="blog__time"><%=blog.createdAt.toLocaleDateString()%></h3>
+                </p>
+                
+            </div>
+            <div>
+                <a class="logout-btn edit-btn" href="/routes/<%=userSpecific._id%>/blog/edit/<%=blog._id%>"id="<%=blog._id%>">Edit</a>
+                <form method="POST" action="/routes/<%=userSpecific._id%>/blog/delete/<%=blog._id%>?_method=DELETE" class="delete-btn" id="delete__form">
+                    <button class="logout-btn" type="submit">Delete</button>
+                </form>
+            </div>
+
+        </article>
+        <% }%>
+        <%})%>
+        </div>
+    </section>
+
+    <script>
+        /*const inputValues=document.querySelectorAll('.form-control');
+        const form= document.getElementById('form__edit');
+        const postBtn=document.querySelector('.btn__blog');
+        const blogID=document.querySelectorAll('.edit-btn');
+        
+        const getEventID=(eventID)=>{
+            console.log(eventID);
+            return eventID;
+        }
+        $(document).ready(()=>{
+            $('.edit-btn').click((e)=>{
+                $('.form__blog-bg').addClass('active','fast');
+                getEventID(e.target.id);
+            });
+            $('.btn__blog-cancel').click(()=>{
+                $('.form__blog-bg').removeClass('active','fast', resetValues());
+            })
+        })
+                    form.addEventListener('submit',(e)=>{
+                        e.preventDefault();
+                        const title=form.title.value;
+                        const description=form.description.value;
+                        const event=document.querySelector('')
+                        getEventID()
+                        console.log(title,description)
+                    });
+
+        const resetValues=()=>{
+            form.reset();
+            
+        }  
+*/
+    
+        
+    </script>
+</body>

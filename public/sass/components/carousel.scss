@@ -1,0 +1,93 @@
+.images__carousel{
+    padding: 25rem 0;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+
+ /*    & figure{
+        width: 500%;
+        left: 0;
+
+    }
+
+    &-item{
+        width: 90%;
+        position: absolute;
+        top: 5%;
+        height: 45rem;
+        display: inline;
+
+    &--1{
+            background-color: hsl(240, 73%, 65%);
+        }
+
+        &--2{
+            background-color: hsl(240, 51%, 43%);
+            transform: translateX(110%);
+        }
+
+        &--3{
+            background-color: hsl(240, 87%, 51%);
+            transform: translateX(220%);
+        }
+
+        &--4{
+            background-color: hsl(240, 96%, 22%);
+            transform: translateX(330%);
+        }
+
+        &--5{
+            background-color: hsl(240, 73%, 65%);
+            transform: translateX(440%);
+        }
+    }*/
+}
+
+/*@keyframes slider{
+    0%{
+        left: 5%;
+    }
+
+    20%{
+        left: 5%;
+    }
+
+    25%{
+        left: -95%;
+    }
+
+    45%{
+        left: -95%;
+    }
+
+    50%{
+        left: -193%;
+    }
+
+    70%{
+        left: -193%;
+    }
+
+    75%{
+        left: -293%;
+    }
+
+    95%{
+        left: -293%;
+    }
+
+    100%{
+        left: -390.25%;
+    }
+}*/
+
+.images__news{
+    padding: 25rem 0;
+    position: relative;
+
+    @include respond(tab-port){
+        width: 100% !important;
+        margin: 2rem 5rem 2rem 5rem;
+    }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/tailwind.css" />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://kit.fontawesome.com/cc289a2103.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>CBD TRANSPORT | WELCOME</title>
+</head>
+<body class="animate__animated animate__slideInLeft">
+    <div class="admin__header">
+        <div class="admin__ribbon">
+            <div class="admin__ribbon--info">
+                <h2 class="request-header">Send Weekly Customer Reports From Here</h2>
+                <a href="/admin/home/" class="admin__home">DONE &rarr;</a>
+            </div>
+        </div>
+        <div class="sacco">
+            <% saccoData.forEach(sacco=>{ %>
+                <div class="saccoElement">
+                    <h3><%=sacco.name%></h3>
+                    <p><%=sacco.email%></p>
+                    <form method="POST" action="/routes/requests/<%=sacco._id%>">
+                        <div class="formError"></div>
+                        <button type="submit" class="bg-blue-800 px-4 py-2 outline-none border-0 text-white hover:shadow-lg mb-4 rounded-lg">Send Report</button>
+                    </form>
+                </div>
+
+
+            <% }) %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+.sacco-contacts{
+    h2{
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+}
+.sacco-contacts__div{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 1rem;
+
+    @include respond(tab-port){
+        flex-direction: column;
+    }
+}
+.contacts__div{
+    position: relative;
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+    height: 10rem;
+    background-color: white;
+    margin-bottom: 2rem;
+    border-radius: 1.5rem;
+    box-sizing: content-box;
+    padding: 5rem 0 3rem 0;
+    overflow: hidden;
+    z-index: -1;
+    background-image: url('/images/Churchill on Twitter.jpg');
+    background-position: center;
+    background-size: cover; 
+
+    @include respond(tab-port){
+        width: calc(100% - #{$gutter-horizontal});
+    }
+
+
+
+    &--content{
+        position: absolute;
+        top: 27.5%;
+        left: 60%;
+        z-index: 5;
+        line-height: 3rem;
+        font-size: 1.2rem;
+
+        @include respond(phone){
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h3{
+            text-transform: uppercase;
+        }
+    }
+    
+
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: -80%;
+        right: -30%;
+        width: 50rem;
+        height: 50rem;
+        border-radius: 50%;
+        background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+        border: 4px solid rgb(13, 37, 47);
+        z-index: 1;
+
+        @include respond(tab-port){
+            bottom: -100%;
+            height: 60rem;
+            width: 60rem;
+            right: -5%;
+        }
+
+        @include respond(phone){
+            bottom: -120%;
+        }
+    }
+    
+    &:nth-child(odd){
+        margin-right: 1.6rem;
+    }
+}

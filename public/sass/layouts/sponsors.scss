@@ -1,0 +1,78 @@
+.sponsors{
+    height: 85vh;
+
+
+    &__content{
+        margin-top: 2rem;
+        padding: 25rem 0;
+        position: relative;
+        cursor: pointer;
+
+        &:hover &-message{
+            clip-path: circle(100%);
+        }
+
+        &-heading{
+            position: absolute;
+            top: 50%;
+            left: -10%;
+            transform: rotate(-90deg);
+            font-size: 6.5rem;
+            color: hsl(240, 73%, 65%);
+
+            @include respond(tab-port){
+                left: -25%;
+                font-size: 5rem;
+            }
+        }
+
+        &-message{
+           color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            position: absolute;
+            z-index: 150;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            font-size: 3.5rem;
+            line-height: 5rem;
+            clip-path: circle(0 at 0% 0%);
+            background-color: hsl(240, 73%, 65%);
+            transition: all .4s ease-in-out;
+
+            @include respond(tab-port){
+                display: none;
+            }
+        }
+
+        &--1, &--2, &--3{
+            @include sponsors-align;
+        }
+        &--1{
+            top: 10%;
+            
+            &-element{
+                background-color: rgb(51, 49, 49);
+                }
+            }
+        &--2{
+            top: 45%;
+
+            &-element{
+                background-color: rgb(51, 49, 49);
+            }
+        }
+
+        &--3{
+            top: 80%;
+
+            &-element{
+                background-color: rgb(51, 49, 49);
+            }
+        }
+
+    }
+}

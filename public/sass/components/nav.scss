@@ -1,0 +1,41 @@
+.ribbon__logo{
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+
+    &-image{
+    margin-left: 5rem;
+    height: 7rem;
+    width: 7rem;
+    background-image: linear-gradient(to right,  hsl(240, 73%, 65%), hsl(273, 75%, 66%));
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    transition: all .4s ease-in-out;
+
+    &:hover{
+        transform: scale(1.08);
+        }
+    }
+}
+
+.ribbon__navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem 2rem 5rem 2rem;
+    font-size: 1.5rem;
+
+    &-list{
+        display: flex;
+        justify-content: space-evenly;
+        list-style: none;
+        width: 50%;
+    }
+
+    &-buttons{
+        width: 50%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}

@@ -1,0 +1,40 @@
+<%-include('./partials/head') %>
+<body>
+    <section class="header">
+        <div class="row">
+            <div class="col-1-of-1 header__hero">
+                <div class="header__logo">
+                <!--make it a link once I've gotten the logo-->
+                </div>
+                <div class="header__text">
+                    <h1 class="heading-1">CDB TRANSPORT</h1>
+                </div>
+                <div class="header__svg">
+                   
+                </div>
+                <div class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-list-item"><a class="header__nav-list-link" href="/routes/">HOME</a></li>
+                        <li class="header__nav-list-item"><a class="header__nav-list-link" href="/routes/about">ABOUT</a></li>
+                        <li class="header__nav-list-item"><a class="header__nav-list-link" href="/routes/contact">CONTACT</a></li>
+                    </ul>
+                </div>
+                <a href="#all-blogs" class="view__btn">View All &darr;</a>
+                <div class="header__hero-img">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="blog__div" id="all-blogs">
+        <% blogs.forEach(blog=>{ %>
+            <div class="blog__div--display">
+                <h2 class="blog__div--display-title"><%=blog.title%></h2>
+                <h3 class="blog__div--display-description"><%=blog.description%></h3>
+                <h4 class="blog__div--display-time"><%=blog.createdAt.toLocaleDateString()%></h5>
+            </div>
+        <% }) %>
+    </div>
+    <%-include('./partials/footer') %>
+</body>

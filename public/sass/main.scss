@@ -1,0 +1,43 @@
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/utilities';
+
+@import 'components/grid';
+@import 'components/nav';
+@import 'components/header';
+@import 'components/button';
+@import 'components/carousel';
+@import 'components/contacts';
+@import 'components/form';
+@import 'components/footer';
+ 
+@import 'base/base';
+
+@import 'layouts/about';
+@import 'layouts/blog__display';
+@import 'layouts/contact';
+@import 'layouts/email__response.scss';
+@import 'layouts/faq';
+@import 'layouts/location';
+@import 'layouts/mapbox';
+@import 'layouts/services';
+@import 'layouts/sponsors';
+@import 'layouts/testimonials';
+@import 'layouts/subscription';
+
+
+@import 'pages/about';
+@import 'pages/blogs';
+@import 'pages/user';
+@import 'pages/blogPages';
+
+@import 'pages/admin/index';
+@import 'pages/admin/home';
+@import 'pages/admin/requests';
+
+
+/*.header{
+    height: 94.5vh;
+    background-color: rgb(197, 176, 176);
+    
+}*/

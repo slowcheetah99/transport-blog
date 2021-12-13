@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>CBD TRANSPORT | WELCOME</title>
+</head>
+<body>
+    <section class="header" id="header__top">
+        <div class="row">
+            <div class="col-1-of-1 header__hero" style="background-image:linear-gradient(to left bottom, hsl(273, 75%, 66%), hsla(240, 73%, 65%,.7))">
+                <div class="header__logo">
+                </div>
+
+                <div class="header__svg">
+                   
+                </div>
+                <div class="header__nav-list d-flex">
+                    <span class="welcome__text">Welcome,<%=userUrl.name%></span>
+                    <a class="logout-btn" id="logout-btn-edit" href="/routes/logout">Logout</a>
+                </div>
+                <div class="header__hero-img">
+<div class="form__blog-bg u-form-center active">
+    <div class="blog__post-edit">
+        <form class="form__blog u-form-centerform__blog-edit" id="blog-edit__form" method="POST" action="/routes/<%=userUrl._id%>/blog/edit/<%=userSpecific._id%>?_method=PUT">
+            <div class="formError"></div>
+            <h2 class="u-center u-title u-margin-big">EDIT POST</h2>
+            <label type="label" for="post-title-edit" class="form-control__label">TITLE:</label>
+            <input type="text" name="title" required=true id="post-title-edit" class="form-control form-inputs" placeholder="Post Title" value="<%=userSpecific.title%>"/>
+         
+            <label type="label" for="post-content-edit" class="form-control__label">CONTENT:</label>
+            <textarea name="description" required=true id="post-content-edit" class="form-control form-inputs" placeholder="Type your content here" ><%=userSpecific.description%></textarea>
+            <div>
+                <button type="submit" class="btn__blog u-margin-top">POST</button>
+                <a class="u-margin-top btn__blog-cancel" href="javascript:history.back()">CANCEL</a>
+            </div>
+        </form>
+    </div>
+</div>
