@@ -39,7 +39,7 @@ app.listen(process.env.PORT || 3000, () => {
   });
   mongoose.connection
     .once("open", () => {
-      console.log("Connected to DB", process.env.MONGO_URI);
+      console.log("Connected to DB");
     })
     .on("error", () => {
       console.log("ERROR CONNECTING TO DB!");
