@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
   res.status(302).redirect("/routes/");
 });
 
-app.listen(process.env.PORT || 5000, () => {
+app.listen(process.env.PORT || 3000, () => {
   mongoose.connect(process.env.MONGO_URI_LOCALHOST, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
