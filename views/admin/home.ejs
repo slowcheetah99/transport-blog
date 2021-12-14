@@ -1,5 +1,6 @@
 <%- include('../partials/admin__head') %>
 <body class="animate__animated animate__slideInLeft">
+    
 <div class="admin__header">
     <div class="admin__ribbon">
         <p><a href="#nav__links">Control All Your From Work Here</a></p>
@@ -8,7 +9,6 @@
 
         <div class="header__logo">
             <!--make it a link once I've gotten the logo-->
-            <a class="logout-btn admin__logout" href="/admin/logout">Logout</a>
             </div>
             <% adminUser.forEach(admin=>{ %>
             <div class="nav__placement">
@@ -30,12 +30,14 @@
             <% }) %>
     <%adminUser.forEach((user)=>{%>
     <h2 class="admin__text text-xl"><a href="/admin/profile">Welcome, <%=user.email%></a></h2>
+
     <% }) %>
 
     </div>
     <h1 class="admin__title">CBD TRANSPORT</h1>
-</div>
+    <a class="logout-btn text-indigo-500 ml-8 admin__logout" id="logout-btn" href="/admin/logout">Logout</a>
 
+</div>
 <canvas id="adminChart">
 
 </canvas>

@@ -1,0 +1,68 @@
+.admin__form {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.admin__form--register {
+  margin: 3rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 35%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5rem 5rem;
+  background-color: #6565e7;
+}
+
+.admin__form--register .form-control {
+  width: 100%;
+}
+
+.form__label:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.submit__btn {
+  margin-top: 1.5rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.submit__btn-button {
+  padding: 1.25rem 4.5rem;
+  background-color: #af67e9;
+  border: none;
+  outline: none;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  color: black;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.submit__btn-button:hover {
+  -webkit-transform: translateY(-0.5rem) scale(1.05);
+          transform: translateY(-0.5rem) scale(1.05);
+  color: white;
+  cursor: pointer;
+}
+/*# sourceMappingURL=index.css.map */

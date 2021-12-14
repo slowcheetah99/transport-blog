@@ -1,0 +1,10 @@
+.email__message {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.email__message--body {
+  margin-bottom: 2rem;
+}
+/*# sourceMappingURL=email__response.css.map */

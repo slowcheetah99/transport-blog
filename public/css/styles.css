@@ -1252,6 +1252,12 @@ section {
   height: 90vh;
   overflow-x: auto;
   position: relative;
+  margin: 50px auto;
+  scrollbar-width: none;
+}
+
+.services::-webkit-scrollbar{
+  display: none;
 }
 .services__left {
   position: absolute;
@@ -1259,31 +1265,31 @@ section {
   top: 40%;
   font-size: 4rem;
   font-weight: bold;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  color: hsl(240, 73%, 65%);
   transition: all 0.4s ease-in-out;
   padding: 0 0.5rem 0.8rem 0.5rem;
   z-index: 10;
   user-select: none;
 }
 .services__left:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.05);
   cursor: pointer;
 }
 .services__right {
   position: absolute;
   right: 2%;
-  top: 40%;
+  top: 42%;
   font-size: 4rem;
   font-weight: bold;
   color: white;
-  background-color: rgba(0, 0, 0, 0.8);
   transition: all 0.4s ease-in-out;
   padding: 0 0.5rem 0.8rem 0.5rem;
   z-index: 10;
+  border-radius: 50%;
 }
+
 .services__right:hover {
-  background-color: black;
+  transform: scale(1.05);
   cursor: pointer;
 }
 .services__card {
@@ -2394,7 +2400,7 @@ textarea {
 
 .admin__logout {
   position: absolute;
-  top: 8%;
+  top: 2%;
 }
 
 .admin__ribbon--info {

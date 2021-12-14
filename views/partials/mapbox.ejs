@@ -1,8 +1,9 @@
 <%- include('./mapbox__head') %>
 <body>
       <div id='map'></div>
-            <script>
-                const token='pk.eyJ1Ijoic2xvd2NoZWV0YWg5OSIsImEiOiJja282NDZtZXgxaWwxMnBzNXFsMndidGRqIn0.By01-aCP9NDkzaGNdUuj6g';
+            <script defer>
+                const mapToken="<%=mapToken%>"
+                const token=mapToken;
                 //setting up the map position
                 const dataLocate=(position)=>{
                     console.log(position);

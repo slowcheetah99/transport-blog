@@ -231,6 +231,34 @@ app.formResponseProcessor = (formId, requestPayload, responsePayload) => {
     }
   }
 
+  if (formId == "preset__form") {
+    if (responsePayload.status !== 200) {
+      document.querySelector(`#${formId} .form-group`).style.visibility =
+        "visible";
+      document.querySelector(`#${formId} .form-group`).classList.add("error");
+      document.querySelector(`#${formId} .form-group small`).innerHTML =
+        responsePayload.message;
+
+      setTimeout(() => {
+        document.querySelector(`#${formId} .form-group`).style.visibility =
+          "hidden";
+        document
+          .querySelector(`#${formId} .form-group`)
+          .classList.remove("error");
+        document.querySelector(`#${formId} .form-group small`).innerHTML = "";
+      }, 1500);
+    } else {
+      document.querySelector(`#${formId} .form-group`).style.visibility =
+        "visible";
+      document.querySelector(`#${formId} .form-group`).classList.add("success");
+      document.querySelector(`#${formId} .form-group small`).innerHTML =
+        responsePayload.message;
+      setTimeout(() => {
+        location.assign("/routes/" + responsePayload.user + "/blog");
+      }, 1500);
+    }
+  }
+
   //subscription__form,
   //contact__form-id,
   //blog-edit__form,

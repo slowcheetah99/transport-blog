@@ -30,7 +30,6 @@ rightControl.addEventListener("click", function () {
     }
     if (toggler > 6) {
       toggler = 6;
-      console.log("mwisho");
     }
   }
 });
@@ -61,7 +60,6 @@ leftControl.addEventListener("click", function () {
     }
     if (toggler < 0) {
       toggler = 0;
-      console.log("mwisho 2");
     }
   }
 });

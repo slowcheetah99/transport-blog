@@ -7,6 +7,7 @@ const jwtAuth = require("../jwt_auth/jwtCtrl");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
 const passTokenHandler = require("../middleware/emailHandler");
+const crypto = require("crypto");
 
 const maxAge = 1 * 24 * 60 * 60;
 const maxAge__mail = 5 * 60;
@@ -20,6 +21,7 @@ const jwtToken = (id) => {
 //middleware for image upload
 
 exports.getSaccoCtrl = async (req, res, next) => {
+  const mapboxToken = process.env.MAPBOX_TOKEN;
   //for circular errors, make the callback asynchronous
   const users = await saccoUser.find({});
   try {
@@ -31,25 +33,13 @@ exports.getSaccoCtrl = async (req, res, next) => {
         res.status(200).render("index", {
           users: users,
           blogs: data,
+          mapToken: mapboxToken,
         });
       }
     });
   } catch (err) {
     console.log(err);
   }
-  // const users = saccoUser.find({}, () => {
-  //   Blog.find({}, (err, data) => {
-  //     if (err) {
-  //       console.log(err);
-  //       res.redirect("/routes/");
-  //     } else {
-  //       res.status(200).render("index", {
-  //         users: users,
-  //         blogs: data,
-  //       });
-  //     }
-  //   });
-  // });
 };
 exports.postSaccoRegisterCtrl = async (req, res, next) => {
   //make sure to make the bcrypt functions asynchronous
@@ -238,4 +228,42 @@ exports.getSaccoLogoutCtrl = (req, res, next) => {
     maxAge: 1,
   });
   res.status(302).redirect("/routes/");
+};
+
+exports.passWordResetGet = (req, res, next) => {
+  res.render("password-reset");
+};
+
+exports.passWordResetPost = async (req, res, next) => {
+  const userMail = await saccoUser.findOne({ email: req.body.email });
+  console.log(userMail.name);
+  if (userMail) {
+    var userPass = await crypto.randomBytes(13).toString("hex");
+
+    //use bcrypt to encrypt the password
+    const salt = await bcrypt.genSalt(10);
+    const hashPassword = await bcrypt.hash(userPass, salt);
+
+    await saccoUser.findByIdAndUpdate(
+      { _id: userMail._id },
+      { password: hashPassword },
+      { new: true }
+    );
+
+    //send password reset email
+    passTokenHandler.sendEmail({
+      email: userMail.email,
+      subject: "Password Reset",
+      message: `<h2>Click this <a href=${req.protocol}://${req.hostname}:${process.env.PORT}/routes/#login>link</a> and log in using the password here: ${userPass}</h2>`,
+    });
+    return res.json({
+      status: res.statusCode,
+      message: "Success! Check your email",
+    });
+  } else {
+    return res.json({
+      status: res.statusCode,
+      message: "Email does not exist",
+    });
+  }
 };

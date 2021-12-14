@@ -27,6 +27,10 @@ const upload = multer({
 //sacco routes
 router.get("/", saccoController.getSaccoCtrl);
 
+router.get("/password-reset", saccoController.passWordResetGet);
+
+router.put("/password-reset", saccoController.passWordResetPost);
+
 router.get("/logout", saccoController.getSaccoLogoutCtrl);
 
 router.get("/about", commonControllers.aboutGet);

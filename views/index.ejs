@@ -1,4 +1,4 @@
-<%- include('./partials/home__head') %>
+<%- include('./partials/index__head') %>
 <body>
     <!--<div class="row">
         <div class="col-1-of-2">
@@ -185,6 +185,7 @@
 
                 <div>
                     <button type="submit" class="submit-btn">Submit</button>
+                    <a href="/routes/password-reset" class="text-white text-2xl ml-4 hover:underline">Forgot your password &rarr;</a>
                 </div>
         </form>
 </section>
@@ -212,12 +213,12 @@
                     <a class="about__text-button--link" href="/routes/about">Learn More &rarr;</a>
                 </div>
             </div>
-        </div>
+        </div> 
     </section>
 
     <section class="services">
-        <span class="services__left">&larr;</span>
-        <span class="services__right">&rarr;</span>
+        <span class="iconify services__left" data-icon="akar-icons:circle-chevron-left-fill"></span>
+        <span class="iconify services__right" data-icon="akar-icons:circle-chevron-right-fill"></span>
         <div class="row">
             <% users.forEach((user)=>{ %>
             <div class="col-1-of-3 services__card services__card--1">

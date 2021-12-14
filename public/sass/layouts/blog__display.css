@@ -1,0 +1,48 @@
+.images__news {
+  position: relative;
+}
+
+.images__news h2 {
+  position: absolute;
+  top: 5%;
+  left: 35%;
+}
+
+.images__news-elements {
+  background: -webkit-gradient(linear, left top, right top, from(#af67e9), to(#6565e7));
+  background: linear-gradient(to right, #af67e9, #6565e7);
+  position: absolute;
+  top: 12.5%;
+  width: 90%;
+  height: 35vh;
+  margin-left: 2rem;
+  border-radius: .5rem;
+  color: white;
+}
+
+.blog__description {
+  font-size: 1.25rem;
+  text-align: left;
+  padding-left: 1rem;
+  margin-top: .2rem;
+  margin-bottom: -.5rem;
+}
+
+.blog__date {
+  text-align: right;
+  padding-right: 1rem;
+  color: black;
+}
+
+.blog__btn {
+  position: absolute;
+  bottom: 5%;
+  right: 35%;
+}
+
+.blog__btn:hover {
+  color: white !important;
+  background-color: #6565e7;
+  padding: .5rem .5rem;
+}
+/*# sourceMappingURL=blog__display.css.map */

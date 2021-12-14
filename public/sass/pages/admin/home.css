@@ -1,0 +1,219 @@
+.admin__header {
+  position: relative;
+  height: 95vh;
+  background: linear-gradient(80deg, #af67e9, rgba(101, 101, 231, 0.4)), url("/images/nairobi-county.jpeg");
+}
+
+.admin__header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2rem 2rem 0rem 2rem;
+}
+
+.admin__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  list-style: none;
+}
+
+.admin__nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.admin__nav a:link {
+  color: white;
+}
+
+.admin__nav a:visited {
+  color: #13da13;
+}
+
+.admin__nav a:hover {
+  color: white;
+}
+
+.admin__nav a:active {
+  color: #13da13;
+}
+
+.admin__text a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.admin__text a::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 0;
+  background-color: white;
+  width: 100%;
+  height: 2px;
+  color: white;
+}
+
+.admin__text a::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  background-color: white;
+  width: 100%;
+  height: 2px;
+  color: white;
+}
+
+.admin__text a:hover {
+  color: white;
+}
+
+.admin__title {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -90%);
+          transform: translate(-50%, -90%);
+  font-size: 5rem;
+  color: white;
+  letter-spacing: .5rem;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.admin__title:hover {
+  letter-spacing: .75rem;
+}
+
+.cancel__btn {
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
+  font-size: 1.2rem;
+  padding: .5rem 3.5rem;
+  border-radius: 2rem;
+  display: inline-block;
+  background-color: #d4cbcb;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.cancel__btn:hover {
+  -webkit-transform: translateY(-0.5rem);
+          transform: translateY(-0.5rem);
+  color: white;
+}
+
+.nav__placement {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.nav__cards {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 3rem;
+  border-radius: 2px;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.nav__cards:hover {
+  -webkit-transform: scale(1.05) translateY(-0.5rem);
+          transform: scale(1.05) translateY(-0.5rem);
+  -webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav__cards--links {
+  padding: 3rem 8rem;
+  text-decoration: none;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  color: black;
+  font-weight: 300;
+}
+
+.nav__cards--links p {
+  width: 200%;
+  display: block;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.nav__cards--links .svgs {
+  font-size: 7rem;
+  color: rgba(101, 101, 231, 0.8);
+  height: 7rem;
+  width: 7rem;
+  margin: 0 auto;
+}
+
+.nav__cards--links .svgs__description {
+  color: black;
+  font-size: 1.25rem;
+}
+
+.admin__ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 25vh;
+  z-index: 0;
+  background-color: #191B30;
+}
+
+.admin__ribbon p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: #d4cbcb;
+  padding: 1.5rem;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.admin__ribbon p a {
+  text-decoration: none;
+  color: #d4cbcb;
+  text-decoration: none;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.admin__ribbon p a:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.admin__logout {
+  position: absolute;
+  top: 8%;
+}
+/*# sourceMappingURL=home.css.map */

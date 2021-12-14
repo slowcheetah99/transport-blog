@@ -214,3 +214,11 @@ exports.reportPreview = async (req, res, next) => {
     blogNum,
   });
 };
+
+exports.getAdminLogoutCtrl = (req, res, next) => {
+  //storing the token in a cookie
+  res.cookie("cookieJwt", "", {
+    maxAge: 1,
+  });
+  res.status(302).redirect("/admin/");
+};

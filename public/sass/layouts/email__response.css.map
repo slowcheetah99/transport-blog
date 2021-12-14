@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,eAAe,CAAA;EACX,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;CAKtB;;AAHI,AAAD,qBAAO,CAAA;EACH,aAAa,EAAE,IAAI;CACtB",
+    "sources": [
+        "email__response.scss"
+    ],
+    "names": [],
+    "file": "email__response.css"
+}

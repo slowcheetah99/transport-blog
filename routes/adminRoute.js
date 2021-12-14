@@ -5,6 +5,8 @@ const auth = require("../jwt_auth/jwtCtrl");
 //admin routes
 router.get("/register", adminController.getAdminRegisterCtrl);
 
+router.get("/logout", adminController.getAdminLogoutCtrl);
+
 router.post("/register", adminController.postAdminRegisterCtrl);
 
 router.get("/", adminController.getAdminLoginCtrl);
