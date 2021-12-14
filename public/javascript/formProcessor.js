@@ -224,7 +224,7 @@ app.formResponseProcessor = (formId, requestPayload, responsePayload) => {
         "visible";
       document.querySelector(`#${formId} .form-group`).classList.add("success");
       document.querySelector(`#${formId} .form-group small`).innerHTML =
-        responsePayload.message;
+        "Logged In";
       setTimeout(() => {
         location.assign("/admin/home");
       }, 1500);

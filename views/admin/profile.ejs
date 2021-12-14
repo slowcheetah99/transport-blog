@@ -14,22 +14,22 @@
             <div class="nav__placement">
                 <div class="nav__cards">
                     <a href="/admin/home" class="nav__cards--links">
-                        <i class="fas fa-tachometer-alt svgs"></i>
-                       <h3 class="svgs__description">DASHBOARD</h3>
+                        <span class="iconify text-indigo-500 h-32 w-32" data-icon="fa-solid:tachometer-alt"></span>
+                       <h3 class="svgs__description font-bold">DASHBOARD</h3>
                        <p>See Admin Information</p>
                     </a>
                 </div>
                 <div class="nav__cards">
                     <a href="/admin/home/requests" class="nav__cards--links">
-                        <i class="fas fa-envelope svgs"></i>
-                        <h3 class="svgs__description">REQUESTS</h3>
+                        <span class="iconify text-indigo-500 h-32 w-32" data-icon="bi:envelope-plus-fill"></span>
+                        <h3 class="svgs__description font-bold">REQUESTS</h3>
                         <p>Pending Messages</p>
                     </a>
                 </div>
             </div>
             <% }) %>
     <%adminDetails.forEach((user)=>{%>
-    <h2 class="admin__text"><a href="/admin/profile">Welcome, <%=user.email%></a></h2>
+    <h2 class="admin__text text-xl"><a href="/admin/profile">Welcome, <%=user.email%></a></h2>
     <% }) %>
 
     </div>
@@ -38,19 +38,19 @@
 
         <div class="admin__form">
             <% adminDetails.forEach(admin=>{ %>
-            <form class="admin__form--register" method="POST" action="/admin/home/<%=admin._id%>?_method=PUT" id="admin-edit__form"> 
+            <form class="admin__form--register rounded-lg" method="POST" action="/admin/home/<%=admin._id%>?_method=PUT" id="admin-edit__form"> 
                 <div class="formError"></div>
-                <h2 class="u-center">EDIT DETAILS</h2>
-                <label type="label" for="admin-username" class="form__label">USERNAME:</label>
+                <h2 class="u-center text-white text-4xl font-bold">EDIT DETAILS</h2>
+                <label type="label" for="admin-username" class="form__label text-2xl text-white">USERNAME:</label>
                 <input type="text" id="admin-username" name="username" required=true
-                class="form-control" value="<%=admin.username%>"/>
+                class="form-control text-xl" value="<%=admin.username%>"/>
     
-                <label type="label" for="admin-password" class="form__label">PASSWORD:</label>
-                <input type="password"id="admin-password" name="password" required=true class="form-control" autocomplete="off"/>
+                <label type="label" for="admin-password" class="form__label text-2xl text-white">PASSWORD:</label>
+                <input type="password"id="admin-password" name="password" required=true class="form-control text-xl" autocomplete="off"/>
     
-                <div class="submit__btn">
-                    <button type="submit" class="submit__btn-button">SUBMIT</button>
-                    <a class="cancel__btn" href="javascript:history.back()">CANCEL</a>
+                <div class="submit__btn">  
+                    <button type="submit" class="bg-purple-500 text-white px-10 rounded-lg py-4 text-xl hover:bg-purple-700 transition ease-in-out duration-300">Submit</button>
+                    <a class="bg-gray-600 text-white px-10 py-4 rounded-lg text-xl hover:bg-gray-800 transition ease-in-out duration-300" href="javascript:history.back()">Cancel</a>
                 </div>
             </form>
             <% }) %>

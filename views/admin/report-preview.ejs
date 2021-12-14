@@ -18,7 +18,6 @@
 
     <h1 class="text-4xl">Report Preview</h1>
     <div class="pdf-capture">
-        <% Object.values(user).forEach(el=>{ %>
         <div class="py-24">
             <div class="px-10 flex justify-between items-center">
                 <div class="brand w-1/4 flex justify-between items-center">
@@ -26,17 +25,18 @@
                     <h3 class="text-4xl font-semibold">CDB Transport</h3>
                 </div>
                     <div>
-                        <h2 class="text-6xl"><%=el.name%></h2>
+                        <h2 class="text-6xl"><%=userName%></h2>
                     </div>
             </div>
+            <% Object.values(user).forEach(el=>{ %>
             <div class="brand-info pl-52">
                 <h4 class="text-2xl font-medium">Phone Number: <%=el.contactDigits %></h4>
                 <h4 class="text-2xl font-medium">Email: <%=el.email%></h4>
             </div>
+            <% }) %>
         </div>
 
         <hr class="bg-gray-50 w-3/4 h-2 m-auto drop-shadow-2xl" />
-        <% }) %>
         
         <h1 class="text-6xl text-center mt-8 mb-16 font-extrabold">Report</h1>
 
@@ -82,7 +82,7 @@
 
 
     
-    <!-- <script type="text/javascript">
+    <script type="text/javascript">
         const pdfCapture=document.querySelector('.pdf-capture');
         const pdfBtn = document.querySelector('#report-gen');
         const pdfPrint=()=>{
@@ -113,7 +113,7 @@
 
 
     pdfPrint();
-    </script> -->
+    </script>
 
 </body>
 </html>

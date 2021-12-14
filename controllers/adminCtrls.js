@@ -42,6 +42,11 @@ exports.getAdminCtrl = async (req, res, next) => {
     }
 
     const adminFound = await Admin.find({});
+    if (!adminFound) {
+      res
+        .status(402)
+        .json({ status: res.statusCode, message: "Wrong Email or Password" });
+    }
     //since the admin is one, using find() will result in an undefined error as it is supposed to return an array
     res.status(200).render("admin/home", {
       adminUser: adminFound,
@@ -143,7 +148,9 @@ exports.getAdminLoginCtrl = (req, res, next) => {
 exports.updateAdminCtrlGet = async (req, res, next) => {
   const adminFound = await Admin.find({});
   if (!adminFound) {
-    console.error(err.message);
+    return res
+      .status(400)
+      .json({ status: res.statusCode, message: err.message });
   } else {
     res.status(200).render("admin/profile", { adminDetails: adminFound });
   }
@@ -206,12 +213,14 @@ exports.sendReportsPost = async (req, res, next) => {
 
 exports.reportPreview = async (req, res, next) => {
   const user = await saccoModels.findById({ _id: req.params.id });
+  const userName = user.name;
   const blogs = await Blog.find({ blogs: user._id });
   const blogNum = blogs.length;
   res.render("admin/report-preview", {
     user,
     blogs,
     blogNum,
+    userName,
   });
 };
 
